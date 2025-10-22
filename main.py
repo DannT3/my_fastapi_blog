@@ -1,13 +1,13 @@
-from fastapi import FastAPI, Header, status, Response
-from fastapi.responses import JSONResponse, HTMLResponse
-import time
+from fastapi import FastAPI
+from src.api.routers import post_routers
 
 app = FastAPI()
 
 @app.get('/')
 def root():
-    time.sleep(5)
     return {"message": "Hello World!"}
+
+app.include_router(post_routers.router)
     
 
 if __name__ == '__main__':

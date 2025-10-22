@@ -6,20 +6,18 @@ class UserBase(BaseModel):
     id: int
 
 class UserCreate(UserBase):
-    id: int
     name: str
     age: int
     password: str
     email: str
 
 class UserRead(UserBase):
-    id: int
     name: str
     age: int
 
 class UserUpdate(UserBase):
     name: str
-    password: str = hash()
+    password: str
     email: str
 
 
